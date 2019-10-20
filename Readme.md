@@ -18,6 +18,13 @@ We build a flask based micro-service which gives a "Spaminess score" for any upl
 2. Image based spam classifier - Convolution neural network which classifies image as spam or not based on the image features
 
 ---
+## Screenshots
+
+![Non Spam image](Screenshot1.png)
+
+![Spam image](Screenshot2.png)
+
+---
 ## Instructions
 
 #### Work with the spam classifier models
@@ -36,6 +43,9 @@ Clone the repo and cd into predict folder
 cd predict
 
 pip install -r requirements.txt
+
+python3 app.py
+
 ```
 
 #### Run within docker
@@ -45,12 +55,18 @@ Clone the repo and cd into predict folder
 Run the image and bash into it to start the server
 
 ```
-docker run --rm -itd --name hack -v /home/mayur/hack/image-spam/predict:/predict -p 5000:5000 kayush206/img_spam:v2 bash
+docker run --rm -itd --name hack -v /home/mayur/hack/spam_buster/predict:/predict -p 5000:5000 kayush206/img_spam:v2 bash
+
+docker exec -it hack bash
 
 cd /predict
 
 python3 app.py
 ```
+
+
+Access the service- 
+http://localhost:5000/spam_buster/api/v1/model
 
 ---
 
