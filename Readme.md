@@ -22,12 +22,11 @@ We build a flask based micro-service which gives a "Spaminess score" for any upl
 
 #### Work with the spam classifier models
 
-[Image to Text](Image to Text.ipynb)
+[Image to Text](Image%20to%20Text.ipynb)
 
-[Image Spam Classifier](Image Spam Classifier.ipynb)
+[Image Spam Classifier](Image%20Spam%20Classifier.ipynb)
 
-[Text Spam Classifier](Text Spam Classifier.ipynb)
-
+[Text Spam Classifier](Text%20Spam%20Classifier.ipynb)
 
 #### Run locally
 
