@@ -20,9 +20,9 @@ We build a flask based micro-service which gives a "Spaminess score" for any upl
 ---
 ## Screenshots
 
-![Non Spam image](Screenshot1.png)
+![Non Spam image](docs/Screenshot1.png)
 
-![Spam image](Screenshot2.png)
+![Spam image](docs/Screenshot2.png)
 
 ---
 ## Instructions
