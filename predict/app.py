@@ -34,6 +34,8 @@ MODEL_1 = 'models/text_model.save'
 MODEL_2 = 'models/image_model_saved.h5'
 
 
+MD5_dict = {}
+
 # Image resizing utils
 def resize_image_array(img, img_size_dims):
   img = cv2.resize(img, dsize=img_size_dims, 
@@ -107,8 +109,8 @@ def upload_file():
 
       # image classification on processed image
       pred = image_model.predict(img_array)
-      pred = pred[0]
-
+      pred = pred[0][0]
+      result = 'SPAM' if pred > 0.5 else 'not SPAM'
       # load the example image and convert it to grayscale
       image = cv2.imread(filepath)
 
@@ -138,7 +140,7 @@ def upload_file():
       # os.remove(ofilename)
 
       return render_template("uploaded.html", fname=filename, fname2="out_" +filename, 
-        result='SPAM', score=str(_score+pred))
+        result=result, score=str(pred*100))
 
 if __name__ == '__main__': 
    app.run(host="0.0.0.0", port=5000, debug=True)
