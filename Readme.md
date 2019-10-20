@@ -74,4 +74,4 @@ Members
 
 * [Mayur Madnani](https://github.com/mayurmadnani)
 * [Ayush Kumar](https://github.com/AK-ayush)
-* [Shweta Pandey]
+* [Shweta Pandey](https://github.com/bomila)
