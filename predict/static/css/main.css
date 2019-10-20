@@ -22,12 +22,12 @@ header {
 }
 
 .title {
-  float: left;
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 17px;
+  font-size: 27px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin: 0px 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title a, .title a:visited {
@@ -42,3 +42,8 @@ header {
   margin: 0px auto;
 }
 
+.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em
+}

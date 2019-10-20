@@ -16,6 +16,7 @@ import tensorflow as tf
 #from keras.preprocessing.image import load_img
 #from keras.preprocessing.image import img_to_array
 
+
 from img_model import load_model
 import logging
 
@@ -110,7 +111,7 @@ def upload_file():
       # image classification on processed image
       pred = image_model.predict(img_array)
       pred = pred[0][0]
-      result = 'SPAM' if pred > 0.5 else 'not SPAM'
+      result = 'SPAM' if pred > 0.5 else 'HAM'
       # load the example image and convert it to grayscale
       image = cv2.imread(filepath)
 
@@ -140,7 +141,7 @@ def upload_file():
       # os.remove(ofilename)
 
       return render_template("uploaded.html", fname=filename, fname2="out_" +filename, 
-        result=result, score=str(pred*100))
+        result=result, score=str(round(pred*100,2)))
 
 if __name__ == '__main__': 
    app.run(host="0.0.0.0", port=5000, debug=True)

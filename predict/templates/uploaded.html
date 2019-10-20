@@ -6,7 +6,7 @@
     <div class="col-md-5">
         <div class="image-container">
             <p class="text-left">Original Image</p>     
-            <a href="/static/uploads/{{ fname }}" target="_new"><img src="/static/uploads/{{ fname }}" class="upload-image-thumb"></a>
+            <a href="/static/uploads/{{ fname }}" target="_new"><img src="/static/uploads/{{ fname }}" class="upload-image-thumb"  height="250" width="200"></a>
         </div>
         <div class="upload-form">
             <p class="text-left">Upload another?</p>
@@ -20,9 +20,24 @@
     <div class="col-md-7 ocr-text">
         <div class="image-container">
             <p class="text-left"> Processed Image</p>     
-            <a href="/static/uploads/{{ fname2 }}" target="_new"><img src="/static/uploads/{{ fname2 }}" class="upload-image-thumb"></a>
+            <a href="/static/uploads/{{ fname2 }}" target="_new"><img src="/static/uploads/{{ fname2 }}" class="upload-image-thumb" height="250" width="200" ></a>
         </div>
-        <p class="text-left">   <b>Prediction:</b> Given image is <b>{{ result }}</b> with score <b>{{ score }}</b>.</p>
+        <!--<p class="text-left">   <b>Prediction:</b> Given image is <b>{{ result }}</b> with score <b>{{ score }}%</b>.</p>-->
     </div>
-</div>  
+</div> 
+<div>
+    {% if result=='HAM' %}
+    <h2 style="color:green;">{{ result }}</h2>
+    {% else %}
+    <h2 style="color:red;">{{ result }}</h2>
+    {% endif %}
+
+    <h6 style="color:blue;">Spam Score: {{score}}</h6> 
+
+ 
+    <div align=center padding=auto class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{score}}" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+      </div>
+  </div>
+ 
 {% endblock %}
